@@ -1,0 +1,37 @@
+picture {
+  display: block;
+  overflow: hidden;
+}
+
+img,
+video {
+  width: 100%;
+  display: block;
+}
+
+figure img,
+picture img,
+video {
+  height: 100%;
+  object-fit: cover;
+}
+
+.lazyload,
+.lazyloaded,
+.b-lazy {
+  transition: filter 0.5s ease, transform 0.5s ease;
+  will-change: filter, transform;
+}
+
+.lazyload,
+.lazyloading,
+.b-lazy {
+  filter: blur(0.5rem);
+  opacity: 0.25;
+}
+
+.lazyloaded,
+.b-loaded {
+  filter: blur(0);
+  opacity: 0.999;
+}

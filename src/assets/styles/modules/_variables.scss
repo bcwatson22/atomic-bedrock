@@ -1,0 +1,42 @@
+:root {
+  --black: #000;
+  --blue: #4682b4;
+  --blue-light: #7ba7cc;
+  --white: #fff;
+
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+
+  --padding: 3rem;
+  --padding-portrait: 4rem;
+  --padding-landscape: 5rem;
+
+  --margin: 3rem;
+  --margin-portrait: 4rem;
+
+  --gap: 3rem;
+  --gap-portrait: 4rem;
+  --gap-landscape: 6rem;
+
+  --gutter: 3rem;
+  --gutter-portrait: 6rem;
+  --gutter-landscape: 12rem;
+
+  --col: calc((100vw - var(--gap) - calc(var(--gutter) * 2)) / 2);
+
+  @include portrait() {
+    --padding: var(--padding-portrait);
+    --margin: var(--margin-portrait);
+    --gap: var(--gap-portrait);
+    --gutter: var(--gutter-portrait);
+    --col: calc((100vw - calc(var(--gap) * 3) - calc(var(--gutter) * 2)) / 4);
+  }
+
+  @include landscape() {
+    --padding: var(--padding-landscape);
+    --gap: var(--gap-landscape);
+    --gutter: var(--gutter-landscape);
+    --col: calc((100vw - calc(var(--gap) * 11) - calc(var(--gutter) * 2)) / 12);
+  }
+}

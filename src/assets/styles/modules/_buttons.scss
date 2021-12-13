@@ -1,0 +1,23 @@
+a,
+button {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  @include before();
+  text-underline-offset: 0.2rem;
+
+  &:before {
+    width: 100%;
+    min-width: 4.4rem;
+    height: 4.4rem;
+    left: 0;
+    @include central();
+  }
+
+  &[disabled] {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
